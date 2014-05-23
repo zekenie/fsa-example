@@ -1,5 +1,8 @@
-var express = require('express');
+var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser');
 
+app.use(bodyParser());
 
 var userList = {};
 var surveyList = {};
@@ -16,7 +19,9 @@ app.post('/twilio', function(req, res, next) {
   var from = req.body.From;
   var text = req.body.Body;
 
+  //Is the user new?
   if ( !userList.hasOwnProperty(from) ) {
+    //are they asking for a valid survey?
     if( surveyList.hasOwnProperty(text) ) {
       var newUser = new User(from, surveyList[text]);
       userList[from] = newUser;
@@ -24,10 +29,7 @@ app.post('/twilio', function(req, res, next) {
   } else {
     sendResponse(res, userList[from].currentNode.text )
     userList[from].currentNode.processResponse(text);
-
   }
-
-  var user = userList[from]
-  console.log(user);
-  sendResponse(res,  )
 });
+
+app.listen(8080);

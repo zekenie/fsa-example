@@ -1,0 +1,25 @@
+{
+  "name": "twilio-example2",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zekenie/fsa-example.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/zekenie/fsa-example/issues"
+  },
+  "homepage": "https://github.com/zekenie/fsa-example",
+  "dependencies": {
+    "express": "~4.3.0",
+    "twilio": "~1.6.0",
+    "body-parser": "~1.2.0"
+  }
+}
