@@ -6,3 +6,4 @@ var User = function(phone,survey) {
   this.currentNode = this.survey.startingNode;
 };
 
+module.exports = User;

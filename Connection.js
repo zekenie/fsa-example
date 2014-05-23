@@ -1,5 +1,7 @@
-var Connection = function(to,from,case) {
+var Connection = function(to,from,condition) {
   this.to = to;
   this.from = from;
-  this.case = case;
+  this.condition = condition;
 };
+
+module.exports = Connection;
